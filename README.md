@@ -5,6 +5,12 @@ When a website uses full page caching (like Varnish Cache) there may be requirem
 This consists of purging cache contents for given address and visiting given address.
 The following application allows for multiple users to define multiple websites and for those websites to define multiple URLs to visit.
 
+## Prerequisites
+For this task you will need a LAMPish stack.
+* PHP
+* MySQL
+* A web server (Apache, Nginx, etc.)
+
 Application uses:
 * [composer](http://getcomposer.org)
 * [PDO](http://php.net/manual/en/book.pdo.php) for MySql access
