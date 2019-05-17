@@ -30,11 +30,11 @@ _Make sure to commit Your work after every completed task._
 
 Install and configure application by running following command
 `php console.php migrate_db`
+This will install the DB schema.
 
-You can run PHP build-in server by running following command
+If you need to you can run a PHP built-in server by running following command
 `php -S 0.0.0.0:8000 -t web/`
-
-The web application is running at http://localhost:8000.
+The web application will be located at http://localhost:8000.
 
 Now modify `.gitignore` file appropriate for Your development environment.
 
