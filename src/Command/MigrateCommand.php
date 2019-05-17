@@ -49,7 +49,7 @@ class MigrateCommand
     private function testConnection(InputInterface $input, OutputInterface $output)
     {
         $hostQuestion = new Question('Please provide database host name: <comment>[localhost]</comment> ', 'localhost');
-        $dbQuestion = new Question('Please provide database name: <comment>kuru-dev-test</comment> ', 'kuru-dev-test');
+        $dbQuestion = new Question('Please provide database name: <comment>[kuru_dev_test]</comment> ', 'kuru_dev_test');
         $userQuestion = new Question('Please provide database user name: <comment>[root]</comment> ', 'root');
         $passwordQuestion = new Question('Please provide database password: ');
 
