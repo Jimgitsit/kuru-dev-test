@@ -18,7 +18,7 @@ Application uses:
 * [FastRoute](https://github.com/nikic/FastRoute) for routing
 * [PHP-DI](http://php-di.org/) as dependency injection container
 
-The following diagram shows the database scheme
+The following diagram shows the database schema which you will create in Task 1
 ![Database Scheme](doc/db.png)
 
 ## Task 1
