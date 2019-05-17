@@ -21,16 +21,24 @@ Application uses:
 The following diagram shows the database scheme
 ![Database Scheme](doc/db.png)
 
-
 ## Task 1
 
 Fork this git repository.
 _Make sure to commit Your work after every completed task._
 > Hint: make sure Your solutions are private, do NOT make pull requests against this repository to submit Your solutions
 
-Install and configure application by running following command
+Clone it to your local machine into a directory of your choosing.
+`git clone https://github.com/kurufootwear/kuru-dev-test.git [dest dir]
+
+Install composer packages.
+`./composer.phar install`
+
+Create the MySQL DB schema.
+`mysql -u root -e "CREATE SCHEMA kuru_dev_test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"`
+
+Install and configure application by running the following command
 `php console.php migrate_db`
-This will install the DB schema.
+This will promt you for DB location and credentials and create the requirted DB tables.
 
 If you need to you can run a PHP built-in server by running following command
 `php -S 0.0.0.0:8000 -t web/`
@@ -40,7 +48,7 @@ Now modify `.gitignore` file appropriate for Your development environment.
 
 ## Task 2
 
-As you may have noticed the console command `php console.php warm 3` is failing because it cannot access the legacy library located in the `lib` directory.
+The console command `php console.php warm 3` is failing because it cannot access the legacy library located in the `lib` directory.
 Fix this problem.
 
 ## Task 3
