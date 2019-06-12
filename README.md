@@ -14,7 +14,7 @@ For this task you will need a LAMPish stack.
 Application uses:
 * [composer](http://getcomposer.org)
 * [PDO](http://php.net/manual/en/book.pdo.php) for MySql access
-* [Silly](http://mnapoli.fr/silly/) for CLI commands
+* [Silly](https://github.com/mnapoli/silly) for CLI commands
 * [FastRoute](https://github.com/nikic/FastRoute) for routing
 * [PHP-DI](http://php-di.org/) as dependency injection container
 
