@@ -1,4 +1,4 @@
-<?php /** @var \Kuru\DevTest\Controller\IndexAction $this */ ?>
+<?php /** @var \Snowdog\DevTest\Controller\IndexAction $this */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +18,7 @@
 
 <body>
 
-<?php \Kuru\DevTest\Component\Menu::getInstance()->render() ?>
+<?php \Snowdog\DevTest\Component\Menu::getInstance()->render() ?>
 
 <?php 
     $pages = $this->getPages(); 
@@ -34,7 +34,22 @@
     <div>
         <h1>Cache Warmer</h1>
         <?php if ($this->user): ?>
-            <p class="bg-success">Hello <?= $this->user->getDisplayName() ?>!</p>
+            <div class="padded">
+                <table class="table table-striped">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Hostname</th>
+                    </tr>
+                    <?php foreach ($this->getWebsites() as $website): /** @var \Snowdog\DevTest\Model\Website $website */ ?>
+                        <tr>
+                            <td><?= $website->getWebsiteId() ?></td>
+                            <td><a href="/website/<?= $website->getWebsiteId() ?>"><?= $website->getName() ?></a></td>
+                            <td><?= $website->getHostname() ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
+            </div>
 
             <div>
                 <p>Total number of pages: <?= count($pages) ?></p>
@@ -64,23 +79,7 @@
                 </form>
             </div>
 
-
-            <div class="padded">
-                <table class="table table-striped">
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Hostname</th>
-                    </tr>
-                    <?php foreach ($this->getWebsites() as $website): /** @var \Kuru\DevTest\Model\Website $website */ ?>
-                        <tr>
-                            <td><?= $website->getWebsiteId() ?></td>
-                            <td><a href="/website/<?= $website->getWebsiteId() ?>"><?= $website->getName() ?></a></td>
-                            <td><?= $website->getHostname() ?></td>
-                        </tr>
-                    <?php endforeach ?>
-                </table>
-            </div>
+            <p class="bg-success">Hello <?= $this->user->getDisplayName() ?>!</p>
         <?php endif ?>
     </div>
 
