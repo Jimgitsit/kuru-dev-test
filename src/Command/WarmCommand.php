@@ -39,8 +39,10 @@ class WarmCommand
             $warmer->setHostname($website->getHostname());
             $warmer->setActor($actor);
 
+            /** @var \Kuru\DevTest\Model\Page $page */
             foreach ($pages as $page) {
                 $warmer->warm($page->getUrl());
+                $this->pageManager->setLastViewed($website, $page, date_format(new \DateTime(), 'Y-m-d H:i:s'));
             }
         } else {
             $output->writeln('<error>Website with ID ' . $id . ' does not exists!</error>');

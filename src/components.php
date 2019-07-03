@@ -36,4 +36,4 @@ Menu::register(LoginMenu::class, 200);
 Menu::register(RegisterMenu::class, 250);
 Menu::register(WebsitesMenu::class, 10);
 
-Migrations::registerComponentMigration('Kuru\\DevTest', 2);
+Migrations::registerComponentMigration('Kuru\\DevTest', 3);
