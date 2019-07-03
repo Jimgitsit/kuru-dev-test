@@ -16,6 +16,15 @@ class PageManager
     {
         $this->database = $database;
     }
+    
+    public function getAllByUser(User $user)
+    {
+        $userId = $user->getUserId();
+        $query = $this->database->prepare('SELECT * FROM pages INNER JOIN websites ON pages.website_id = websites.website_id WHERE websites.user_id = :user_id ORDER BY last_visit ASC');
+        $query->bindParam(':user_id', $userId, \PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_CLASS, Page::class);
+    }
 
     public function getAllByWebsite(Website $website)
     {

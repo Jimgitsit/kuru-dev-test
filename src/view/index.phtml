@@ -20,6 +20,10 @@
 
 <?php \Kuru\DevTest\Component\Menu::getInstance()->render() ?>
 
+<?php 
+    $pages = $this->getPages(); 
+?>
+
 <div class="container">
 
     <?php if (isset($_SESSION['flash'])): ?>
@@ -32,6 +36,18 @@
         <?php if ($this->user): ?>
             <p class="bg-success">Hello <?= $this->user->getDisplayName() ?>!</p>
 
+            <div>
+                <p>Total number of pages: <?= count($pages) ?></p>
+            </div>
+        
+            <div>
+                <p>Least recently visited page: <?= $pages[0]->getUrl() ?></p>
+            </div>
+    
+            <div>
+                <p>Most recently visited page: <?= $pages[count($pages) - 1]->getUrl() ?></p>
+            </div>
+        
             <div class="padded">
                 <form class="form-inline" method="post" action="/website">
                     <div class="form-group">
