@@ -26,8 +26,12 @@ class IndexAction
     {
         $this->websiteManager = $websiteManager;
         $this->pageManager = $pageManager;
+    
         if (isset($_SESSION['login'])) {
             $this->user = $userManager->getByLogin($_SESSION['login']);
+        }
+        else {
+            header("Location: /login");
         }
     }
 
